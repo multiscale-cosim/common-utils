@@ -4,9 +4,11 @@
 #  Version 2.0."
 
 import os
-from utils.util import safe_makedir
+# TODO: relative import instead of absolute import
+# from utils.util import safe_makedir
+from python.configuration_manager.utils import util
 from datetime import datetime
-from definitions import OUTPUT_DIR
+from python.configuration_manager.definitions import OUTPUT_DIR
 
 
 class MetaDirectoriesManager(type):
@@ -63,7 +65,7 @@ class DirectoriesManager(metaclass=MetaDirectoriesManager):
 
         target_directory = name + datetime.strftime(datetime.now(),
                                                     '_%Y-%m-%d_%H-%M')
-        safe_makedir(target_directory)
+        util.safe_makedir(target_directory)
         return target_directory
 
     def make_directory(self, directory):
@@ -72,6 +74,6 @@ class DirectoriesManager(metaclass=MetaDirectoriesManager):
         Returns the path to the specified directory.
         """
         target_directory = os.path.join(self.get_directory('output'), directory)
-        safe_makedir(target_directory)
+        util.safe_makedir(target_directory)
         self.__directories.update({directory: target_directory})
         return target_directory

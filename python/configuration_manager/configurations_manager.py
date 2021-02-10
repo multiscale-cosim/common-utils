@@ -3,36 +3,15 @@
 #  contributor license agreements; and to You under the Apache License,
 #  Version 2.0."
 
-from definitions import CONFIG_FILE
-from xml_parser import Parser
-from config_logger import ConfigLogger
-from directories_manager import DirectoriesManager
+# TODO: relative import instead of absolute import
+from python.configuration_manager.definitions import CONFIG_FILE
+# from definitions import CONFIG_FILE
+from python.configuration_manager.xml_parser import Parser
+from python.configuration_manager.config_logger import ConfigLogger
+from python.configuration_manager.directories_manager import DirectoriesManager
 
 
 class ConfigurationsManager:
-    """Manages all the configuration settings.
-
-     Examples:
-    >>> config_manager = ConfigurationsManager()
-
-
-    # make a directory
-    >>> config_manager.make_directory('test_directory') # doctest: +ELLIPSIS
-    ...\\test_directory
-    
-    # load specified component settings as a dictionary object from XML configuration file
-    >>> launcher_settings = config_manager.get_configuration_settings('launcher_configurations', CONFIG_FILE)
-    >>> print(launcher_settings)
-    {'foo': {'bar': None}, 'test_type': 'cluster'}
-
-    >>> print(type(launcher_settings))
-    <class 'dict'>
-
-    # configure and load logger
-    >>> myLogger = ConfigurationsManager().load_log_configurations(__name__)
-    >>> myLogger.info("configured") # doctest: +ELLIPSIS
-    20...INFO configurationsmanager... configured
-    """
 
     __directories_manager = DirectoriesManager()
     __parser = Parser()
@@ -105,9 +84,9 @@ class ConfigurationsManager:
         return logger.initialize_logger(name, target_directory,
                                         configurations=log_configurations)
 
-
 if __name__ == '__main__':
     # configure logger
-    myLogger = ConfigurationsManager().load_log_configurations(__name__)
+    my_logger = ConfigurationsManager().load_log_configurations(__name__)
     # emit logs
-    myLogger.info("configured!")
+    my_logger.info("configured!")
+    my_logger.error("ERROR: an error message!")
