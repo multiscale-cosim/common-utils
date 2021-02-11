@@ -61,16 +61,18 @@ class ConfigurationsManagerTest(unittest.TestCase):
         """Case: the target ``component configuration settings`` exists.
         It should return the configuration settings for that."""
         target_component_configuration_settings = 'log_configurations'
-        # case: it extracts the configurations settings that exist for the target component
+        # Test: it returns the configurations settings that exist for the target component
         self.assertIsNotNone(self.configurations_manager.
                              get_configuration_settings(target_component_configuration_settings))
+        print(self.configurations_manager.
+              get_configuration_settings(target_component_configuration_settings))
 
     def test_get_component_configuration_settings_data_type_correctness(self):
         """Case: the return data type for the existing target
          configuration settings is 'correct'."""
         target_component_configuration_settings = 'log_configurations'
         target_data_type = dict
-        # case: it returns the correct data type
+        # Test: it returns the correct data type
         self.assertIsInstance(self.configurations_manager.
                               get_configuration_settings(target_component_configuration_settings),
                               target_data_type)
