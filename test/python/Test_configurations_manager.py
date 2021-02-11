@@ -64,8 +64,6 @@ class ConfigurationsManagerTest(unittest.TestCase):
         # Test: it returns the configurations settings that exist for the target component
         self.assertIsNotNone(self.configurations_manager.
                              get_configuration_settings(target_component_configuration_settings))
-        print(self.configurations_manager.
-              get_configuration_settings(target_component_configuration_settings))
 
     def test_get_component_configuration_settings_data_type_correctness(self):
         """Case: the return data type for the existing target
