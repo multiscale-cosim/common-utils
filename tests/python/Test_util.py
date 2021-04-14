@@ -4,7 +4,7 @@ import os
 import unittest
 from pathlib import Path
 # TODO: relative import instead of absolute import
-from python.configuration_manager.utils import util
+from python.configuration_manager.utils import directory_utils
 
 
 class TestUtilMakeDirectory(unittest.TestCase):
@@ -25,10 +25,10 @@ class TestUtilMakeDirectory(unittest.TestCase):
         # remove the directory if it already exists
         self.__remove_directory_if_exists(tmp_dir_os)
         os.makedirs(tmp_dir_os)  # make the directory at target location
-        # test: whether the target directory already exists at target location
+        # tests: whether the target directory already exists at target location
         self.assertTrue(os.path.isdir(tmp_dir_os))
-        # test: it should return the path to existing target directory
-        self.assertEqual(Path(tmp_dir_os), Path(util.safe_makedir(tmp_dir_os)))
+        # tests: it should return the path to existing target directory
+        self.assertEqual(Path(tmp_dir_os), Path(directory_utils.safe_makedir(tmp_dir_os)))
         shutil.rmtree(tmp_dir_os)  # clean up
 
     def test_make_new_dir_not_exists(self):
@@ -38,11 +38,11 @@ class TestUtilMakeDirectory(unittest.TestCase):
         tmp_target_dir = os.path.join(tempfile.gettempdir(), "temp_target_dir")
         # remove the directory if it already exists
         self.__remove_directory_if_exists(tmp_target_dir)
-        util.safe_makedir(tmp_target_dir)  # make a new directory
-        # test: whether the directory is created
+        directory_utils.safe_makedir(tmp_target_dir)  # make a new directory
+        # tests: whether the directory is created
         self.assertTrue(os.path.isdir(tmp_target_dir))
-        # test: it should return the path to the created target directory
-        self.assertEqual(Path(tmp_target_dir), Path(util.safe_makedir(tmp_target_dir)))
+        # tests: it should return the path to the created target directory
+        self.assertEqual(Path(tmp_target_dir), Path(directory_utils.safe_makedir(tmp_target_dir)))
         shutil.rmtree(tmp_target_dir)  # clean up
 
     def test_file_exists_same_name_location(self):
@@ -53,7 +53,8 @@ class TestUtilMakeDirectory(unittest.TestCase):
         fd, file_path = tempfile.mkstemp()
         # Test: it should raise an exception when trying to make a
         # directory with the same name as already existing file
-        self.assertRaises(Exception, util.safe_makedir(file_path))
+        with self.assertRaises(Exception):
+            directory_utils.safe_makedir(file_path)
         # clean up
         os.close(fd)  # close the file descriptor
         os.remove(file_path)  # delete the file
