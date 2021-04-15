@@ -20,9 +20,6 @@ Out of source build is currently broken
  - The including / building of the Table.h file goes wrong
 
 ## License
-
-------------------------------------------------------------------------------
 Copyright 2020 Forschungszentrum Jülich GmbH  
 "Licensed to the Apache Software Foundation (ASF) under one or more contributor
 license agreements; and to You under the Apache License, Version 2.0. "
-------------------------------------------------------------------------------
