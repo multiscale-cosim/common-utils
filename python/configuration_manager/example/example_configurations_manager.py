@@ -36,20 +36,20 @@ if __name__ == '__main__':
         'log_configurations', 'example_settings.xml')
 
     # configure logger with the default settings
-    my_logger = configurations_manager.load_log_configurations(name=__name__,
-                                                               log_configurations=logger_settings)
+    example_logger = configurations_manager.load_log_configurations(name=__name__,
+                                                                    log_configurations=logger_settings)
 
     # emit logs
-    my_logger.info("default: logger is configured!")
-    my_logger.error("default: an error message!")
+    example_logger.info("default: logger is configured!")
+    example_logger.error("default: an error message!")
 
     # configure logger with user specified location for log emissions
     dir_path=Path('Example_customized_location_for_logs')
-    my_logger = configurations_manager.load_log_configurations(name='example_logger',
-                                                               log_configurations=logger_settings,
-                                                               directory='example_logs_directory',
-                                                               directory_path=dir_path)
+    example_logger = configurations_manager.load_log_configurations(name='example_logger',
+                                                                    log_configurations=logger_settings,
+                                                                    directory='example_logs_directory',
+                                                                    directory_path=dir_path)
 
     # emit logs
-    my_logger.info("customized location: logger is configured!")
-    my_logger.error("customized location: an error message!")
+    example_logger.info("customized location: logger is configured!")
+    example_logger.error("customized location: an error message!")

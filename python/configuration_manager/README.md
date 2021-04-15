@@ -53,12 +53,12 @@ my_logger = configurations_manager.load_log_configurations(name=__name__, log_co
 
 # configure logger with user specified location
 dir_path=Path('../my_logs')
-my_logger = configurations_manager.load_log_configurations(name=__name__, log_configurations=logger_settings,
+example_logger = configurations_manager.load_log_configurations(name=__name__, log_configurations=logger_settings,
                                                          directory='tests', directory_path=dir_path)
 
 # emit logs
-my_logger.info("logger is configured!")
-my_logger.error("an error message!")
+example_logger.info("logger is configured!")
+example_logger.error("an error message!")
 ```
 
 ## License
