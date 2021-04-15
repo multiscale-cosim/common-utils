@@ -49,7 +49,7 @@ configurations_manager.get_default_directory(DefaultDirectories.OUTPUT)
 logger_settings = configurations_manager.get_configuration_settings('log_configurations', 'global_settings.xml')
 
 # configure logger with default settings
-my_logger = configurations_manager.load_log_configurations(name=__name__, log_configurations=logger_settings)
+example_logger = configurations_manager.load_log_configurations(name=__name__, log_configurations=logger_settings)
 
 # configure logger with user specified location
 dir_path=Path('../my_logs')

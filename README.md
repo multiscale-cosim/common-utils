@@ -13,7 +13,7 @@ This way, it ensures a centralized management of directories,
 and a uniform format for the log settings.
 
 
-##TODO:
+## TODO:
 
 Out of source build is currently broken
  - test runner files are missing
