@@ -3,10 +3,10 @@
 It provides with the basic functionalities including the 
 directory management, log management, XML configurations parsing,
 conversion of XML element tree into Python dictionary object.
-The features it provides include:
+The features it provides include, a centralized management of
 
-* a centralized management of directories,
-* XML parsing and manipulation, and
+* XML parsing and manipulation, 
+* setting up directories, and
 * a uniform format for the log settings.
 
 ## Basic Description
@@ -31,7 +31,16 @@ The following example illustrates how to:
 1. Setup Log configurations 
    1. set path to logs at default location (e.g. ../Cosimulation_outputs/<username>_output_<timestamp>/logs)
    1. set user specified path to the logs
-   
+
+
+```bash
+# set enviornment variable
+$ export PYTHONPATH=/path/to/common-utils
+
+# access
+$ cd /path/to/configuration_manager
+```
+
 ```python
 # instantiate configuration manager
 configurations_manager = ConfigurationsManager()
