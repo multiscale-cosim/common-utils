@@ -39,7 +39,7 @@
   <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
   <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
   <a href="#memo-license">License</a> &#xa0; | &#xa0;
-  <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}" target="_blank">Author</a>
+  <a href="https://github.com/multiscale-cosim" target="_blank">Author</a>
 </p>
 
 <br>
@@ -99,10 +99,10 @@ Out of source build is currently broken
 
 ## :memo: License ##
 
-This project is under license from Apache License, Version 2.0. For more details, see the [LICENSE](LICENSE.md) file.
+This project is under license from Apache License, Version 2.0. For more details, see the [LICENSE](LICENSE) file.
 
 
-Made with :heart: by <a href="https://github.com/multiscale-cosim" target="_blank">{{Multiscale Co-simulation team}}</a>
+Made by <a href="https://github.com/multiscale-cosim" target="_blank">Multiscale Co-simulation team.</a>
 
 &#xa0;
 
